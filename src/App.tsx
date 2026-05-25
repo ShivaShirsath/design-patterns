@@ -17,38 +17,38 @@ import { UserSubscriber } from "./behavioral/observer/user.subscriber";
 
 // --- SVG Icons ---
 const IconSingleton = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2S8 7 8 11s4 4 4 8-4-1-4-5"/><path d="M12 2s4 5 4 9-4 4-4 8 4-1 4-5"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2S8 7 8 11s4 4 4 8-4-1-4-5" /><path d="M12 2s4 5 4 9-4 4-4 8 4-1 4-5" /></svg>
 );
 const IconFactory = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20V9l4-2 4 2 4-2 4 2 4-2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/><path d="M7 14h1"/><path d="M12 14h1"/><path d="M17 14h1"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 20V9l4-2 4 2 4-2 4 2 4-2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" /><path d="M17 18h1" /><path d="M12 18h1" /><path d="M7 18h1" /><path d="M7 14h1" /><path d="M12 14h1" /><path d="M17 14h1" /></svg>
 );
 const IconBuilder = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
 );
 const IconAdapter = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="18"/><line x1="15" y1="22" x2="15" y2="18"/><line x1="12" y1="2" x2="12" y2="8"/><path d="M9 8h6"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="9" y1="22" x2="9" y2="18" /><line x1="15" y1="22" x2="15" y2="18" /><line x1="12" y1="2" x2="12" y2="8" /><path d="M9 8h6" /></svg>
 );
 const IconDecorator = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
 );
 const IconStrategy = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M18 15V9a4 4 0 0 0-4-4H9"/><path d="M8 9l-3-3 3-3"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><path d="M18 15V9a4 4 0 0 0-4-4H9" /><path d="M8 9l-3-3 3-3" /></svg>
 );
 const IconObserver = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M7.76 16.24a6 6 0 0 1 0-8.49"/><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="2" /><path d="M16.24 7.76a6 6 0 0 1 0 8.49" /><path d="M19.07 4.93a10 10 0 0 1 0 14.14" /><path d="M7.76 16.24a6 6 0 0 1 0-8.49" /><path d="M4.93 19.07a10 10 0 0 1 0-14.14" /></svg>
 );
 const IconCode = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>
 );
 const IconTrash = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /></svg>
 );
 
 export default function App() {
   const [activePattern, setActivePattern] = useState<
     "singleton" | "factory" | "builder" | "adapter" | "decorator" | "strategy" | "observer"
   >("singleton");
-  
+
   const [showCode, setShowCode] = useState<boolean>(true);
   const [consoleLogs, setConsoleLogs] = useState<string[]>([]);
   const consoleBottomRef = useRef<HTMLDivElement>(null);
@@ -70,11 +70,11 @@ export default function App() {
   }, [activePattern]);
 
   // --- STATE FOR SPECIFIC SIMULATORS ---
-  
+
   // 1. Singleton state
   const [singletonLogsFile, setSingletonLogsFile] = useState<string[]>([]);
   const [singletonInputMsg, setSingletonInputMsg] = useState("");
-  
+
   useEffect(() => {
     // Read initial app.log values
     const logs = JSON.parse(localStorage.getItem("app_logs") || "[]");
@@ -91,23 +91,23 @@ export default function App() {
 
   const runSingletonLog = (clientNum: number) => {
     if (!singletonInputMsg.trim()) return;
-    
+
     // Capture standard console.log
     const originalConsoleLog = console.log;
     let loggedText = "";
-    console.log = (msg: string) => {
-      loggedText = msg.trim();
+    console.log = (...args: any[]) => {
+      loggedText = args.join(" ").trim();
     };
 
     const loggerInstance = Logger.getInstance();
     loggerInstance.log(`Client ${clientNum}: ${singletonInputMsg}`);
-    
+
     // Restore
     console.log = originalConsoleLog;
-    
+
     addLog(`Invoked Logger.getInstance().log(...) from Client ${clientNum}`);
     addLog(`Console Output: ${loggedText}`);
-    
+
     setSingletonInputMsg("");
   };
 
@@ -127,29 +127,29 @@ export default function App() {
     if (!factoryMsg.trim()) return;
     setFactoryAnimState("creating");
     addLog(`Creating notification type: "${factoryType}" via Factory`);
-    
+
     setTimeout(() => {
       // Create implementation
       const originalConsoleLog = console.log;
       let logged = "";
-      console.log = (msg: string) => {
-        logged = msg;
+      console.log = (...args: any[]) => {
+        logged = args.join(" ");
       };
-      
+
       const notifier = NotificationFactory.create(factoryType);
-      
+
       console.log = originalConsoleLog;
-      
+
       setFactoryAnimState("sending");
       addLog(`Instantiated Class: ${notifier.constructor.name}`);
-      
+
       setTimeout(() => {
-        console.log = (msg: string) => {
-          logged = msg;
+        console.log = (...args: any[]) => {
+          logged = args.join(" ");
         };
         notifier.send(factoryMsg);
         console.log = originalConsoleLog;
-        
+
         setFactoryOutput(logged);
         setFactoryAnimState("done");
         addLog(`Console Output: ${logged}`);
@@ -178,17 +178,17 @@ export default function App() {
   const runAdapterDemo = () => {
     setAdapterStep("client");
     addLog(`Client queries Adapter WeatherService: .fetch("${adapterCity}")`);
-    
+
     setTimeout(() => {
       setAdapterStep("adapter");
       addLog(`Adapter routes call to legacy ExternalWeatherAPI: .getTemperature("${adapterCity}")`);
-      
+
       setTimeout(() => {
         setAdapterStep("api");
         const api = new ExternalWeatherAPI();
         const apiResult = api.getTemperature(adapterCity);
         addLog(`External API raw response: "${apiResult}"`);
-        
+
         setTimeout(() => {
           const adapter = new WeatherAdapter(api);
           const finalVal = adapter.fetch(adapterCity);
@@ -208,12 +208,12 @@ export default function App() {
   const runDecoratorDemo = () => {
     setDecoratorStatus("processing");
     addLog("Sending request to protected endpoint with JWT token: " + (jwtToken ? `"${jwtToken}"` : "(Empty)"));
-    
+
     setTimeout(() => {
       const originalConsoleLog = console.log;
       let logs: string[] = [];
-      console.log = (msg: string) => {
-        logs.push(msg);
+      console.log = (...args: any[]) => {
+        logs.push(args.join(" "));
       };
 
       const getProfile = (req: Request) => {
@@ -246,12 +246,12 @@ export default function App() {
   const runStrategyDemo = () => {
     setStrategyAnim(true);
     addLog(`Instantiating Context with ${paymentMethod.toUpperCase()} strategy`);
-    
+
     setTimeout(() => {
       const originalConsoleLog = console.log;
       let output = "";
-      console.log = (msg: string) => {
-        output = msg;
+      console.log = (...args: any[]) => {
+        output = args.join(" ");
       };
 
       const strategy = paymentMethod === "card" ? new CardPayment() : new UpiPayment();
@@ -295,26 +295,26 @@ export default function App() {
     addLog(`Broadcasting message: "${eventMsg}"`);
 
     const manager = new EventManager();
-    
+
     // Wire up subscribers
     subscribers.forEach((name) => {
       const originalConsoleLog = console.log;
       let logOutput = "";
-      console.log = (msg: string) => {
-        logOutput = msg;
+      console.log = (...args: any[]) => {
+        logOutput = args.join(" ");
       };
-      
+
       const sub = new UserSubscriber(name);
       manager.subscribe(sub);
-      
+
       console.log = originalConsoleLog;
     });
 
     // Notify & capture logs
     const capturedLogs: string[] = [];
     const originalConsoleLog = console.log;
-    console.log = (msg: string) => {
-      capturedLogs.push(msg);
+    console.log = (...args: any[]) => {
+      capturedLogs.push(args.join(" "));
     };
 
     manager.notify(eventMsg);
@@ -475,6 +475,17 @@ export default function App() {
                       </code>
                     </div>
 
+                    <div style={{ display: "flex", gap: "10px", alignItems: "center", width: "100%" }}>
+                      <input
+                        type="text"
+                        placeholder="Type message to log..."
+                        value={singletonInputMsg}
+                        onChange={(e) => setSingletonInputMsg(e.target.value)}
+                        style={{ flex: 1 }}
+                        onKeyDown={(e) => e.key === "Enter" && runSingletonLog(1)}
+                      />
+                    </div>
+
                     <div style={styles.singletonGrid}>
                       <div style={styles.clientBox}>
                         <div style={styles.clientTitle}>Client A (Logger Instance)</div>
@@ -499,17 +510,6 @@ export default function App() {
                           Trigger logger2.log()
                         </button>
                       </div>
-                    </div>
-
-                    <div style={{ display: "flex", gap: "10px", alignItems: "center", width: "100%" }}>
-                      <input
-                        type="text"
-                        placeholder="Type message to log..."
-                        value={singletonInputMsg}
-                        onChange={(e) => setSingletonInputMsg(e.target.value)}
-                        style={{ flex: 1 }}
-                        onKeyDown={(e) => e.key === "Enter" && runSingletonLog(1)}
-                      />
                     </div>
 
                     {/* Simulated File Storage */}
@@ -673,12 +673,12 @@ export default function App() {
                       {/* Visual user preview card */}
                       <div style={styles.builderPreview}>
                         <div style={styles.builderCardHeader}>User Object Construction</div>
-                        
+
                         <div style={styles.previewUserCard}>
                           <div style={styles.userCardAvatar}>
                             {builderName ? builderName.substring(0, 2).toUpperCase() : "?"}
                           </div>
-                          
+
                           <div style={styles.userCardDetails}>
                             <h3 style={{ ...styles.userCardDetailVal, opacity: builderName ? 1 : 0.3 }}>
                               {builderName || "Name not set"}
@@ -699,7 +699,7 @@ export default function App() {
                         <div style={{ marginTop: "15px" }}>
                           <span style={{ fontSize: "0.8rem", color: varColor("text-secondary") }}>Under the hood builder calls:</span>
                           <pre style={{ fontSize: "0.75rem", marginTop: "5px", padding: "10px" }}>
-{`const user = new UserBuilder()
+                            {`const user = new UserBuilder()
 ${builderName ? `  .setName("${builderName}")\n` : ""}${builderAge ? `  .setAge(${builderAge})\n` : ""}${builderEmail ? `  .setEmail("${builderEmail}")\n` : ""}${builderCity ? `  .setCity("${builderCity}")\n` : ""}  .build();`}
                           </pre>
                         </div>
@@ -805,6 +805,8 @@ ${builderName ? `  .setName("${builderName}")\n` : ""}${builderAge ? `  .setAge(
                         <span style={{ fontSize: "0.75rem", opacity: 0.7 }}>Token: {jwtToken ? `"${jwtToken}"` : "None"}</span>
                       </div>
 
+                      <div style={{ color: "var(--text-muted)", fontSize: "1.2rem" }}>➔</div>
+
                       {/* Decorator Gate */}
                       <div
                         style={{
@@ -823,14 +825,36 @@ ${builderName ? `  .setName("${builderName}")\n` : ""}${builderAge ? `  .setAge(
                         </span>
                       </div>
 
+                      <div style={{ color: "var(--text-muted)", fontSize: "1.2rem", opacity: decoratorStatus === "success" ? 1 : 0.3 }}>➔</div>
+
                       {/* Handler Endpoint */}
                       <div
                         style={{
                           ...styles.decEndpoint,
                           opacity: decoratorStatus === "success" ? 1 : 0.4,
+                          borderColor: decoratorStatus === "success" ? varColor("color-success") : "var(--border-color)",
                         }}
                       >
                         🖥️ Endpoint: getProfile()
+                      </div>
+                    </div>
+
+                    {/* Visual Execution Flow Trace */}
+                    <div style={{ marginTop: "15px", background: "rgba(0,0,0,0.2)", borderRadius: "8px", padding: "12px", border: "1px solid var(--border-color)" }}>
+                      <div style={{ fontSize: "0.85rem", fontWeight: 600, color: varColor("text-secondary"), marginBottom: "6px" }}>
+                        Execution Trace: How we hit getProfile()
+                      </div>
+                      <div style={{ fontFamily: "var(--font-mono)", fontSize: "0.8rem", color: "var(--text-primary)", display: "flex", flexDirection: "column", gap: "4px" }}>
+                        <div>1. Client invokes: <span style={{ color: varColor("color-accent") }}>protectedHandler({`{ token: "${jwtToken}" }`})</span></div>
+                        <div style={{ color: decoratorStatus !== "idle" ? varColor("color-primary") : "var(--text-muted)", transition: "color 0.3s" }}>
+                          2. Request intercepts at decorator wrapper: <span style={{ color: varColor("color-primary") }}>withAuth(...)</span>
+                        </div>
+                        <div style={{ color: (decoratorStatus === "success" || decoratorStatus === "unauthorized") ? (decoratorStatus === "success" ? varColor("color-success") : varColor("color-error")) : "var(--text-muted)", transition: "color 0.3s" }}>
+                          3. Auth Check: {jwtToken ? `Token "${jwtToken}" matches -> Success!` : "Token is missing/falsy -> Unauthorized!"}
+                        </div>
+                        <div style={{ color: decoratorStatus === "success" ? varColor("color-success") : "var(--text-muted)", opacity: decoratorStatus === "unauthorized" ? 0.5 : 1, transition: "color 0.3s" }}>
+                          4. Endpoint Execution: {decoratorStatus === "success" ? "getProfile(req) is executed ✅" : "getProfile(req) is NOT reached ❌"}
+                        </div>
                       </div>
                     </div>
 
@@ -993,7 +1017,7 @@ ${builderName ? `  .setName("${builderName}")\n` : ""}${builderAge ? `  .setAge(
                 )}
               </div>
             </div>
-            
+
             {/* Visual Logger Output panel (Console Logs simulation) */}
             <div className="glass-panel" style={{ ...styles.panelContent, marginTop: "20px" }}>
               <div style={styles.panelHeader}>
@@ -1291,7 +1315,7 @@ const styles: Record<string, React.CSSProperties> = {
     gap: "20px",
     padding: "4px",
   },
-  
+
   // Singleton
   singletonGlowNode: {
     background: "rgba(139, 92, 246, 0.05)",
