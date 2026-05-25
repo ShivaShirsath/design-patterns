@@ -46,8 +46,8 @@ const IconTrash = () => (
 
 export default function App() {
   const [activePattern, setActivePattern] = useState<
-    "singleton" | "factory" | "builder" | "adapter" | "decorator" | "strategy" | "observer"
-  >("singleton");
+    "home" | "singleton" | "factory" | "builder" | "adapter" | "decorator" | "strategy" | "observer"
+  >("home");
 
   const [showCode, setShowCode] = useState<boolean>(true);
   const [consoleLogs, setConsoleLogs] = useState<string[]>([]);
@@ -332,10 +332,19 @@ export default function App() {
     <div style={styles.appContainer}>
       {/* Sidebar Navigation */}
       <aside style={styles.sidebar}>
-        <div style={styles.sidebarHeader}>
+        <div
+          onClick={() => setActivePattern("home")}
+          style={{ ...styles.sidebarHeader, cursor: "pointer" }}
+          title="Go to Home Dashboard"
+        >
           <div style={styles.sidebarGlowLogo}>DP</div>
           <div>
-            <h1 style={styles.logoTitle}>Design Patterns</h1>
+            <h1 style={{
+              ...styles.logoTitle,
+              color: activePattern === "home" ? "var(--color-primary)" : "var(--text-primary)"
+            }}>
+              Design Patterns
+            </h1>
             <span style={styles.logoSubtitle}>TypeScript Visualizer</span>
           </div>
         </div>
@@ -429,9 +438,13 @@ export default function App() {
         <header style={styles.header}>
           <div>
             <h2 style={styles.headerTitle}>
-              {activePattern.charAt(0).toUpperCase() + activePattern.slice(1)} Pattern
+              {activePattern === "home"
+                ? "Design Patterns Overview"
+                : `${activePattern.charAt(0).toUpperCase() + activePattern.slice(1)} Pattern`
+              }
             </h2>
             <p style={styles.headerSubtitle}>
+              {activePattern === "home" && "An interactive visualization portal to learn creational, structural, and behavioral software patterns."}
               {activePattern === "singleton" && "Ensures a class has only one instance and provides a global point of access."}
               {activePattern === "factory" && "Defines an interface for creating objects, letting subclasses decide which class to instantiate."}
               {activePattern === "builder" && "Separates the construction of a complex object from its representation."}
@@ -441,29 +454,140 @@ export default function App() {
               {activePattern === "observer" && "Defines a one-to-many dependency between objects so that all dependants are notified of changes."}
             </p>
           </div>
-          <button
-            onClick={() => setShowCode(!showCode)}
-            style={{
-              ...styles.codeToggleBtn,
-              ...(showCode ? styles.codeToggleBtnActive : {}),
-            }}
-          >
-            <IconCode />
-            <span>{showCode ? "Hide Code" : "Show Code"}</span>
-          </button>
+          {activePattern !== "home" && (
+            <button
+              onClick={() => setShowCode(!showCode)}
+              style={{
+                ...styles.codeToggleBtn,
+                ...(showCode ? styles.codeToggleBtnActive : {}),
+              }}
+            >
+              <IconCode />
+              <span>{showCode ? "Hide Code" : "Show Code"}</span>
+            </button>
+          )}
         </header>
 
         {/* Dashboard Split View */}
         <div style={styles.splitViewContainer}>
           {/* Simulator Panel (Left Panel) */}
-          <div style={{ ...styles.splitPanel, flex: 1.1 }}>
+          <div style={{ ...styles.splitPanel, flex: activePattern === "home" ? 1 : 1.1 }}>
             <div className="glass-panel" style={styles.panelContent}>
               <div style={styles.panelHeader}>
-                <span style={styles.panelTitle}>Interactive Playground</span>
-                <span style={styles.patternPill}>SIMULATOR</span>
+                <span style={styles.panelTitle}>
+                  {activePattern === "home" ? "Understanding Software Design Patterns" : "Interactive Playground"}
+                </span>
+                <span style={{
+                  ...styles.patternPill,
+                  ...(activePattern === "home" ? { background: "rgba(16, 185, 129, 0.15)", color: "var(--color-success)" } : {})
+                }}>
+                  {activePattern === "home" ? "CONCEPT BLOCKS" : "SIMULATOR"}
+                </span>
               </div>
 
               <div style={styles.simulatorArea}>
+                {/* 0. HOME DASHBOARD OVERVIEW */}
+                {activePattern === "home" && (
+                  <div style={styles.homeContainer}>
+                    {/* Welcome Banner */}
+                    <div style={styles.homeBanner}>
+                      <div style={{ flex: 1 }}>
+                        <h3 style={styles.homeBannerTitle}>What are Design Patterns?</h3>
+                        <p style={styles.homeBannerText}>
+                          Design patterns are <strong>reusable blueprints</strong> for solving common, recurring software engineering challenges. Rather than copy-pasting code, a design pattern acts as a template or conceptual guide for structuring classes and communication between objects in a clean, maintainable, and scalable way.
+                        </p>
+                      </div>
+                      <div style={styles.homeBannerGraphic}>
+                        <div style={styles.blueprintGrid}>
+                          <div style={styles.blueprintLine} />
+                          <div style={styles.blueprintCircle} />
+                          <span style={styles.blueprintText}>BLUEPRINT</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* The 3 Pillars Grid */}
+                    <div style={styles.pillarsGrid}>
+                      {/* Creational */}
+                      <div className="pillar-card" onClick={() => setActivePattern("singleton")}>
+                        <div style={{ ...styles.pillarIconHeader, background: "rgba(139, 92, 246, 0.1)" }}>
+                          <IconFactory />
+                          <strong style={{ color: "var(--color-primary)" }}>Creational Patterns</strong>
+                        </div>
+                        <span style={styles.pillarAnalogy}>Analogy: The Constructor / Factory</span>
+                        <p style={styles.pillarDesc}>
+                          These patterns deal with <strong>object creation mechanisms</strong>, trying to create objects in a manner suitable to the situation instead of instantiating them directly.
+                        </p>
+                        <ul style={styles.pillarList}>
+                          <li><strong>Singleton:</strong> One single instance globally.</li>
+                          <li><strong>Factory:</strong> Instantiates subclasses dynamically.</li>
+                          <li><strong>Builder:</strong> Assembles complex objects step-by-step.</li>
+                        </ul>
+                        <div className="pillar-action" style={styles.pillarAction}>Explore Creational ➔</div>
+                      </div>
+
+                      {/* Structural */}
+                      <div className="pillar-card" onClick={() => setActivePattern("adapter")}>
+                        <div style={{ ...styles.pillarIconHeader, background: "rgba(59, 130, 246, 0.1)" }}>
+                          <IconAdapter />
+                          <strong style={{ color: "var(--color-secondary)" }}>Structural Patterns</strong>
+                        </div>
+                        <span style={styles.pillarAnalogy}>Analogy: Plugs, Adapters, & Gift Wrappers</span>
+                        <p style={styles.pillarDesc}>
+                          These patterns describe how to <strong>assemble objects and classes</strong> into larger structures, keeping these structures flexible and efficient.
+                        </p>
+                        <ul style={styles.pillarList}>
+                          <li><strong>Adapter:</strong> Connects incompatible interfaces.</li>
+                          <li><strong>Decorator:</strong> Adds behaviors without subclassing.</li>
+                        </ul>
+                        <div className="pillar-action" style={styles.pillarAction}>Explore Structural ➔</div>
+                      </div>
+
+                      {/* Behavioral */}
+                      <div className="pillar-card" onClick={() => setActivePattern("strategy")}>
+                        <div style={{ ...styles.pillarIconHeader, background: "rgba(6, 182, 212, 0.1)" }}>
+                          <IconObserver />
+                          <strong style={{ color: "var(--color-accent)" }}>Behavioral Patterns</strong>
+                        </div>
+                        <span style={styles.pillarAnalogy}>Analogy: Communication Pipelines & Routing</span>
+                        <p style={styles.pillarDesc}>
+                          These patterns focus on <strong>communication between objects</strong>, detailing how responsibilities and algorithms are shared.
+                        </p>
+                        <ul style={styles.pillarList}>
+                          <li><strong>Strategy:</strong> Swaps algorithms at runtime.</li>
+                          <li><strong>Observer:</strong> Broadcasts updates to subscribers.</li>
+                        </ul>
+                        <div className="pillar-action" style={styles.pillarAction}>Explore Behavioral ➔</div>
+                      </div>
+                    </div>
+
+                    {/* Why Patterns Matter Card */}
+                    <div style={styles.whyPatternsCard}>
+                      <h4 style={{ fontSize: "1rem", fontWeight: 600, marginBottom: "10px" }}>Why should you learn Design Patterns?</h4>
+                      <div style={styles.benefitsGrid}>
+                        <div style={styles.benefitItem}>
+                          <strong>💡 Save Development Time</strong>
+                          <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "4px" }}>
+                            Leverage proven software engineering architectures rather than reinventing structure.
+                          </p>
+                        </div>
+                        <div style={styles.benefitItem}>
+                          <strong>🧱 Write Maintainable Code</strong>
+                          <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "4px" }}>
+                            Separation of concerns and loose coupling mean making changes in one component won't break others.
+                          </p>
+                        </div>
+                        <div style={styles.benefitItem}>
+                          <strong>🗣️ Speak the Same Language</strong>
+                          <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", marginTop: "4px" }}>
+                            Saying "we use an Observer here" instantly communicates structure to other developers on your team.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* 1. SINGLETON LOGGER SIMULATOR */}
                 {activePattern === "singleton" && (
                   <div style={styles.patternSimContainer}>
@@ -1019,33 +1143,35 @@ ${builderName ? `  .setName("${builderName}")\n` : ""}${builderAge ? `  .setAge(
             </div>
 
             {/* Visual Logger Output panel (Console Logs simulation) */}
-            <div className="glass-panel" style={{ ...styles.panelContent, marginTop: "20px" }}>
-              <div style={styles.panelHeader}>
-                <span style={styles.panelTitle}>Simulated Output Console</span>
-                <button
-                  onClick={() => setConsoleLogs([])}
-                  style={styles.clearFileBtn}
-                >
-                  Clear Console
-                </button>
+            {activePattern !== "home" && (
+              <div className="glass-panel" style={{ ...styles.panelContent, marginTop: "20px" }}>
+                <div style={styles.panelHeader}>
+                  <span style={styles.panelTitle}>Simulated Output Console</span>
+                  <button
+                    onClick={() => setConsoleLogs([])}
+                    style={styles.clearFileBtn}
+                  >
+                    Clear Console
+                  </button>
+                </div>
+                <div style={styles.consoleContainer}>
+                  {consoleLogs.length === 0 ? (
+                    <span style={styles.emptyConsole}>Console empty. Trigger interactions in the simulator above to view logs.</span>
+                  ) : (
+                    consoleLogs.map((log, idx) => (
+                      <div key={idx} style={styles.consoleLogLine}>
+                        <span>{log}</span>
+                      </div>
+                    ))
+                  )}
+                  <div ref={consoleBottomRef} />
+                </div>
               </div>
-              <div style={styles.consoleContainer}>
-                {consoleLogs.length === 0 ? (
-                  <span style={styles.emptyConsole}>Console empty. Trigger interactions in the simulator above to view logs.</span>
-                ) : (
-                  consoleLogs.map((log, idx) => (
-                    <div key={idx} style={styles.consoleLogLine}>
-                      <span>{log}</span>
-                    </div>
-                  ))
-                )}
-                <div ref={consoleBottomRef} />
-              </div>
-            </div>
+            )}
           </div>
 
           {/* Code Viewer Panel (Right Panel) */}
-          {showCode && (
+          {showCode && activePattern !== "home" && (
             <div style={{ ...styles.splitPanel, flex: 0.9 }}>
               <div className="glass-panel" style={styles.panelContent}>
                 <div style={styles.panelHeader}>
@@ -1793,5 +1919,141 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: "0.75rem",
     color: "var(--color-accent)",
     fontStyle: "italic",
+  },
+  
+  // Home Page Overview
+  homeContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "24px",
+    padding: "6px",
+  },
+  homeBanner: {
+    background: "linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%)",
+    border: "1px solid rgba(139, 92, 246, 0.15)",
+    borderRadius: "14px",
+    padding: "24px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "20px",
+  },
+  homeBannerTitle: {
+    fontSize: "1.35rem",
+    fontWeight: 700,
+    marginBottom: "10px",
+    color: "var(--text-primary)",
+    fontFamily: "var(--font-sans)",
+  },
+  homeBannerText: {
+    fontSize: "0.95rem",
+    lineHeight: "1.6",
+    color: "var(--text-secondary)",
+  },
+  homeBannerGraphic: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "12px",
+    background: "rgba(255, 255, 255, 0.01)",
+    border: "1px dashed rgba(255, 255, 255, 0.15)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "relative",
+    overflow: "hidden",
+    flexShrink: 0,
+  },
+  blueprintGrid: {
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "radial-gradient(rgba(59, 130, 246, 0.15) 10%, transparent 10%)",
+    backgroundSize: "10px 10px",
+  },
+  blueprintLine: {
+    position: "absolute",
+    width: "80%",
+    height: "2px",
+    background: "rgba(59, 130, 246, 0.3)",
+    transform: "rotate(35deg)",
+  },
+  blueprintCircle: {
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
+    border: "2px solid rgba(139, 92, 246, 0.4)",
+    position: "absolute",
+  },
+  blueprintText: {
+    position: "absolute",
+    bottom: "8px",
+    fontSize: "0.6rem",
+    fontWeight: "bold",
+    letterSpacing: "1px",
+    color: "rgba(59, 130, 246, 0.6)",
+  },
+  pillarsGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+    gap: "20px",
+  },
+  pillarIconHeader: {
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+    padding: "10px 14px",
+    borderRadius: "10px",
+    fontSize: "1rem",
+  },
+  pillarAnalogy: {
+    fontSize: "0.75rem",
+    color: "var(--text-muted)",
+    fontStyle: "italic",
+    display: "block",
+  },
+  pillarDesc: {
+    fontSize: "0.85rem",
+    lineHeight: "1.5",
+    color: "var(--text-secondary)",
+  },
+  pillarList: {
+    listStyleType: "none",
+    fontSize: "0.85rem",
+    display: "flex",
+    flexDirection: "column",
+    gap: "4px",
+    marginTop: "6px",
+    paddingLeft: "4px",
+    color: "var(--text-secondary)",
+  },
+  pillarAction: {
+    marginTop: "auto",
+    paddingTop: "12px",
+    fontSize: "0.82rem",
+    fontWeight: 600,
+    color: "var(--color-primary)",
+    textAlign: "right",
+  },
+  whyPatternsCard: {
+    background: "rgba(255, 255, 255, 0.01)",
+    border: "1px solid var(--border-color)",
+    borderRadius: "14px",
+    padding: "20px",
+    marginTop: "8px",
+  },
+  benefitsGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+    gap: "16px",
+    marginTop: "12px",
+  },
+  benefitItem: {
+    background: "rgba(0,0,0,0.15)",
+    border: "1px solid var(--border-color)",
+    borderRadius: "10px",
+    padding: "14px",
   },
 };
